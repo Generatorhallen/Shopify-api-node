@@ -61,6 +61,19 @@ const base = {
   },
 
   /**
+   * Gets events by its ID.
+   *
+   * @param {Number} id Record ID
+   * @param {Object} [params] Query parameters
+   * @return {Promise} Promise that resolves with the result
+   * @public
+   */
+  events(id, params) {
+    const url = this.buildUrl(id+'/events', params);
+    return this.shopify.request(url, 'GET', this.key);
+  },
+
+  /**
    * Gets a list of records.
    *
    * @param {Object} params Query parameters
