@@ -70,7 +70,7 @@ const base = {
    */
   events(id, params) {
     const url = this.buildUrl(id+'/events', params);
-    return this.shopify.request(url, 'GET', this.key);
+    return this.shopify.request(url, 'GET', 'events');
   },
 
   /**
